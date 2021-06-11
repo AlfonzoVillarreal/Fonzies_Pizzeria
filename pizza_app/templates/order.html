@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Fonzie's Pizzeria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/checkout">Order()</a>
+                <a class="nav-item nav-link active" href="/account">Account</a>
+                <a class="nav-item nav-link active" href="/">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="order-container">
+        <h2>Make A Pizza</h2>
+        <!--Dropdown Pizza Size-->
+        <div class="size">
+            <h4> Pizza Size:</h4>
+            <div class="form-group">
+                <div class="col-sm-12" >
+                    <select class="form-control" id="size" name="size">
+                        <option value="">Small</option>
+                        <option value="">Medium</option>
+                        <option value="">Large</option>
+                        <option value="">X-Large</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--Dropdown Pizza Crust-->
+        <div class="crust">
+            <h4> Pizza Crust:</h4>
+            <div class="form-group">
+                <div class="col-sm-12" >
+                    <select class="form-control" id="size" name="size">
+                        <option value="">Hand-Tossed</option>
+                        <option value="">Pan</option>
+                        <option value="">Stuffed Crust</option>
+                        <option value="">Thin Crust</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--Meat Toppings Div-->
+        <div class="meats">
+            <h4>Meat Toppings</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="pepperoni" id="pepperoni">
+                <label class="form-check-label" for="pepperoni">Pepperoni</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="sausage" id="sausage">
+                <label class="form-check-label" for="sausage">Sausage</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="cbacon" id="cbacon">
+                <label class="form-check-label" for="cbacon">Canadian Bacon</label>
+            </div>
+        </div>
+        <!--Veggie Toppings Div-->
+        <div class="veggies">
+            <h4>Veggie Toppings</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="mushrooms" id="mushrooms">
+                <label class="form-check-label" for="mushrooms">Mushrooms</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="olives" id="olives">
+                <label class="form-check-label" for="olives">Olives</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="jalapenos" id="jalapenos">
+                <label class="form-check-label" for="jalapenos">Jalapeños</label>
+            </div>
+        </div>
+        <!--Submit Order Button-->
+        <button type="submit">Add to Order</button>
+    </div>
+
+
+
+</body>
+</html>
