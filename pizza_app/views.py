@@ -5,14 +5,12 @@ from .models import *
 
 # Create your views here.
 def home(request):
-    request.session.flush()
     return render(request, 'home.html')
 
 def new_user(request):
     if request.method == "POST":
         errors = User.objects.reg_validator(request.POST)
         print(errors)
-
 
     new_user = User.objects.create(
         first_name = request.POST['fname'], 
@@ -27,12 +25,12 @@ def new_user(request):
 def login(request):
     if request.method == "POST":
         errors = User.objects.login_validator(request.POST)
-        return redirect('/')
 
-    
     return render(request, 'login.html')
 
 def order(request):
+    Order.objects.all()
+    
     return render(request, 'order.html')
 
 def checkout(request):
@@ -65,7 +63,6 @@ def edit(request, id):
     pizza_edit.descriptions = request.POST['']
     pizza_edit.price = request.POST['']
     pizza_edit.save()
-
     return redirect('/account')
 
 def delete(request, id):
