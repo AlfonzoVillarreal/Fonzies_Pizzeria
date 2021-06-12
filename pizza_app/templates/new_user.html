@@ -22,7 +22,7 @@
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="/checkout">Order()</a>
                 <a class="nav-item nav-link active" href="/account">Account</a>
-                <a class="nav-item nav-link active" href="/">Logout</a>
+                <a class="nav-item nav-link active" href="/logout">Logout</a>
             </div>
         </div>
     </nav>
@@ -33,28 +33,28 @@
 
     <!--New User Form-->
     <div id="new_user">
-        <form action="/new_user" method="POST">
+        <form action="/account" method="POST">
             <h3>Create An Account</h3>
             {% csrf_token %}
             <!--First Name-->
             <div class="form-group">
                 <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" value="{{user.first_name}}"> 
+                <input type="text" name="first_name"> 
             </div>
             <!--Last Name-->
             <div class="form-group">
                 <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" value="{{ user.last_name }}">
+                <input type="text" name="last_name">
             </div>
             <!--Email-->
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" name="email" value="{{ user.email }}">
+                <input type="text" name="email">
             </div>
             <!--Password-->
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" name="password" value="{{ user.password }}">
+                <input type="password" name="password">
             </div>
             <!--Sign Up Button-->
             <button type="submit" value="Save">Sign Up</button>

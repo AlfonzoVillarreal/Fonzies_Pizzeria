@@ -4,7 +4,6 @@ import re
 class UserManager(models.Manager):
     def reg_validator(self, postData):
         errors = {}
-
         if len(postData['first_name']) < 2:
             errors['first_name'] = "First Name must be at least 2 characters long."
         if len(postData['last_name']) < 2:
@@ -54,6 +53,7 @@ class Order(models.Model):
 
 #Pizza
 class Pizza(models.Model):
+    name = models.CharField(max_length=45)
     description = models.CharField(max_length=255)
     price = models.DecimalField(decimal_places=2, max_digits=5)
     pizzas = models.ForeignKey(Order, related_name='pizza_orders', on_delete=models.CASCADE)

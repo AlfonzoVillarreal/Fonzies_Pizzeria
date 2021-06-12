@@ -22,14 +22,14 @@
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="/checkout">Order()</a>
                 <a class="nav-item nav-link active" href="/account">Account</a>
-                <a class="nav-item nav-link active" href="/">Logout</a>
+                <a class="nav-item nav-link active" href="/logout">Logout</a>
             </div>
         </div>
     </nav>
 
     <!--Login-->
     <div class="login">
-        <form action="/login" method="POST">
+        <form action="/home" method="POST">
             <h2>Log In!</h2>
             {% csrf_token %}
             <div class="form-group">

@@ -22,7 +22,7 @@
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="/checkout">Order({{order.quantity.ordered}})</a>
                 <a class="nav-item nav-link active" href="/account/{ user.id }>">Account</a>
-                <a class="nav-item nav-link active" href="/">Logout</a>
+                <a class="nav-item nav-link active" href="/logout">Logout</a>
             </div>
         </div>
     </nav>
@@ -31,8 +31,8 @@
     <div class="account_info">
         <h1>Account Information</h1>
         <li>
-            <ul>Name:{{ user.first_name }} {{ user.last_name }}</ul>
-            <ul>Email: {{ user.email }}</ul>
+            <ul>Name:{{request.session.first_name}} {{request.session.last_name}}</ul>
+            <ul>Email: {{request.session.email}}</ul>
         </li>
     </div>
 

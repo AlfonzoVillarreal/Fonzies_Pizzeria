@@ -22,11 +22,10 @@
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="/checkout">Order()</a>
                 <a class="nav-item nav-link active" href="/account">Account</a>
-                <a class="nav-item nav-link active" href="/">Logout</a>
+                <a class="nav-item nav-link active" href="/logout">Logout</a>
             </div>
         </div>
     </nav>
-
 
     <div class="pizza-options">
         <div class="card" style="width: 18rem;">
@@ -66,7 +65,10 @@
                 <p class="card-text">Canadian Bacon, Pineapple, Mozzerella Cheese, Fonzie's Famous Sauce</p>
                 <p>Large</p>
                 <h6>$14.99</h6>
-                <a href="" class="btn btn-primary">Add to Order</a>
+                <form action="/checkout" method="POST">
+                    <a href="" class="btn btn-primary">Add to Order</a>
+                </form>
+                
             </div>
         </div>
     </div>

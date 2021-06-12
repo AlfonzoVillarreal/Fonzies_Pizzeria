@@ -8,10 +8,12 @@ def home(request):
     return render(request, 'home.html')
 
 def new_user(request):
-
     if request.method == "POST":
-        errors = User.objects.reg_validator(request.POST)
-        print(errors)
+        first_name = request.POST['first_name'],
+        last_name = request.POST['last_name'],
+        email = request.POST['email'],
+        password = request.POST['password'],
+        return redirect('/account')
 
     return render (request, 'new_user.html')
 
@@ -23,7 +25,6 @@ def login(request):
     return render(request, 'login.html')
 
 def order(request):
-    Order.objects.all()
     
     return render(request, 'order.html')
 
@@ -31,10 +32,12 @@ def checkout(request):
     return render(request, 'checkout.html')
 
 def account(request):
-    context = {
-        'user': User.objects.get(id=id)
-    }
-    return render(request, 'account.html', context)
+    if request.method == "POST":
+        request.session['first_name'] = request.POST['first_name'],
+        request.session['last_name'] = request.POST['last_name'],
+        request.session['email'] = request.POST['email'],
+        request.session['password'] = request.POST['password'],
+    return redirect('/account.html',)
 
 def logout(request):
     request.session.flush()
@@ -60,6 +63,6 @@ def edit(request, id):
     return redirect('/account')
 
 def delete(request, id):
-    destroy = Pizza.objects.get(id=id)
-    destroy.delete()
-    return redirect('/order')
+    delete_pizza = Pizza.objects.get(id=id)
+    delete_pizza.delete()
+    return redirect('/checkout')
