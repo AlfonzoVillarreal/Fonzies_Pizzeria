@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="/checkout">Order()</a>
+                <a class="nav-item nav-link active" href="/checkout">Order({{order.quantity.ordered}})</a>
                 <a class="nav-item nav-link active" href="/account/{ user.id }>">Account</a>
                 <a class="nav-item nav-link active" href="/">Logout</a>
             </div>
@@ -34,6 +34,16 @@
             <ul>Name:{{ user.first_name }} {{ user.last_name }}</ul>
             <ul>Email: {{ user.email }}</ul>
         </li>
+    </div>
+
+    <div class="edit-account">
+        <h4>Edit User Information</h4>
+        <form action="/edit{{ user.id }}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="">
+            </div>
+        </form>
     </div>
 
     

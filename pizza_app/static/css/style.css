@@ -7,6 +7,15 @@
     flex-direction: column;
     align-items: flex-end;
 }
+.navbar img {
+    width: 75px;
+    height: 100px;
+    margin-right: 15px;
+}
+.navbar a {
+    font-size: 25px;
+}
+
 
 
 /* New User */
@@ -72,6 +81,11 @@
     justify-content: flex-end;
 }
 
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* Account */
 .account_info{
@@ -82,13 +96,18 @@
 }
 
 /* Order */
-.order-container {
+.pizza-options .card-body {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
 }
-.order-container button {
-    margin: 15px;
+.pizza-options h6 {
+    text-align: center;
+}
+.pizza-options {
+    display: flex;
+    justify-content: center;
 }
 
 

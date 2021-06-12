@@ -33,31 +33,31 @@
 
     <!--New User Form-->
     <div id="new_user">
-        <form action="" method="POST">
+        <form action="/new_user" method="POST">
             <h3>Create An Account</h3>
             {% csrf_token %}
             <!--First Name-->
             <div class="form-group">
-                <label for="fname">First Name:</label>
-                <input type="text" name="fname">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" value="{{user.first_name}}"> 
             </div>
             <!--Last Name-->
             <div class="form-group">
-                <label for="lname">Last Name:</label>
-                <input type="text" name="lname">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" value="{{ user.last_name }}">
             </div>
             <!--Email-->
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" name="email">
+                <input type="text" name="email" value="{{ user.email }}">
             </div>
             <!--Password-->
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" name="password">
+                <input type="password" name="password" value="{{ user.password }}">
             </div>
             <!--Sign Up Button-->
-            <button type="submit">Sign Up</button>
+            <button type="submit" value="Save">Sign Up</button>
             <!--Navigate to Login Page-->
             <a href="/login">Have an account? Login in here!</a>
         </form>

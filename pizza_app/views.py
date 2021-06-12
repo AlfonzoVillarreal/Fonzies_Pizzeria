@@ -8,19 +8,13 @@ def home(request):
     return render(request, 'home.html')
 
 def new_user(request):
+
     if request.method == "POST":
         errors = User.objects.reg_validator(request.POST)
         print(errors)
 
-    new_user = User.objects.create(
-        first_name = request.POST['fname'], 
-        last_name = request.POST['lname'], 
-        email = request.POST['email'], 
-        password = request.POST['password']
-    )
-    request.session['user'] = new_user.first_name
-    request.session['id'] = new_user.id
-    return redirect ('/')
+    return render (request, 'new_user.html')
+
 
 def login(request):
     if request.method == "POST":
@@ -49,8 +43,8 @@ def logout(request):
 def edit(request, id):
     edit_user = User.objects.get(id=id)
 
-    edit_user.first_name = request.POST['fname']
-    edit_user.last_name = request.POST['lname']
+    edit_user.first_name = request.POST['first_name']
+    edit_user.last_name = request.POST['last_name']
     edit_user.email = request.POST['email']
     edit_user.save()
 
