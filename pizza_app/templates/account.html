@@ -21,7 +21,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="/checkout">Order({{order.quantity.ordered}})</a>
-                <a class="nav-item nav-link active" href="/account/{ user.id }>">Account</a>
+                <a class="nav-item nav-link active" href="/account">Account</a>
                 <a class="nav-item nav-link active" href="/logout">Logout</a>
             </div>
         </div>
@@ -30,20 +30,13 @@
     <!--Account Information-->
     <div class="account_info">
         <h1>Account Information</h1>
-        <li>
-            <ul>Name:{{request.session.first_name}} {{request.session.last_name}}</ul>
-            <ul>Email: {{request.session.email}}</ul>
-        </li>
+        <h5>Name:{{request.session.first_name}} {{request.session.last_name}}</h5>
+        <h5>Email: {{request.session.email}}</h5>
     </div>
 
     <div class="edit-account">
         <h4>Edit User Information</h4>
-        <form action="/edit{{ user.id }}" method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <input type="text" name="">
-            </div>
-        </form>
+        <a href="" class="btn btn-primary">Edit Profile</a>
     </div>
 
     

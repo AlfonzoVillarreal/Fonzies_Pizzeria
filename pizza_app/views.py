@@ -37,7 +37,7 @@ def account(request):
         request.session['last_name'] = request.POST['last_name'],
         request.session['email'] = request.POST['email'],
         request.session['password'] = request.POST['password'],
-    return redirect('/account.html',)
+    return render(request, 'account.html')
 
 def logout(request):
     request.session.flush()
@@ -46,9 +46,9 @@ def logout(request):
 def edit(request, id):
     edit_user = User.objects.get(id=id)
 
-    edit_user.first_name = request.POST['first_name']
-    edit_user.last_name = request.POST['last_name']
-    edit_user.email = request.POST['email']
+    edit_user.first_name = request.session['first_name']
+    edit_user.last_name = request.session['last_name']
+    edit_user.email = request.session['email']
     edit_user.save()
 
     order_edit = Order.objects.get(id=id)
