@@ -35,26 +35,21 @@
     <!--Order List-->
     <div class="order-list">
         <h3>Your Order</h3>
-        <p>Method: {}</p>
-        <p>Quantity: {}</p>
-        <p>Size: {}</p>
-        <p>Crust: {}</p>
-        <p>Meat Toppings: {} </p>
-        <p>Veggie Toppings: {}</p>
+
     </div>
 
     <div class="buttons">
         <!--Edit Button-->
         <div class="edit">
-            <button type="button" class="btn btn-warning">Edit</button>
+            <a href="/{ user.id }/edit" class="btn btn-warning">Edit</a>
         </div>
         <!--Delete-->
         <div class="delete">
-            <button type="button" class="btn btn-danger">Delete</button>
+            <a href="/delete" class="btn btn-danger">Delete</a>
         </div>
         <!--"Add More" Button-->
         <div class="add-more">
-            <button type="button" class="btn btn-primary">Add More</button>
+            <a href="/order" class="btn btn-primary">Add More</a>
         </div>
     </div>
 
