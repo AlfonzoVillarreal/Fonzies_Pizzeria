@@ -19,7 +19,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Hello {{ request.session.first_name }}!</span></a>
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/order">Menu</a>
                 <a class="nav-item nav-link active" href="/checkout">Order()</a>
                 <a class="nav-item nav-link active" href="/account">Account</a>
                 <a class="nav-item nav-link active" href="/logout">Logout</a>
@@ -35,7 +37,7 @@
                 <p class="card-text">Italian Sausage, Mozzerella Cheese, Fonzie's Famous Sauce</p>
                 <p>Large</p>
                 <h6>$12.99</h6>
-                <a href="" class="btn btn-primary">Add to Order</a>
+                <a href="/order" class="btn btn-primary">Add to Order</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -45,7 +47,7 @@
                 <p class="card-text">Pepperoni, Mozzerella Cheese, Fonzie's Famous Sauce</p>
                 <p>Large</p>
                 <h6>$12.99</h6>
-                <a href="" class="btn btn-primary">Add to Order</a>
+                <a href="/order" class="btn btn-primary">Add to Order</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -55,7 +57,7 @@
                 <p class="card-text">Italian Sausage, Pepperoni, Green Olives, Mushrooms, Onions, Green Peppers Mozzerella Cheese, Fonzie's Famous Sauce</p>
                 <p>Large</p>
                 <h6>$16.99</h6>
-                <a href="" class="btn btn-primary">Add to Order</a>
+                <a href="/order" class="btn btn-primary">Add to Order</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -66,7 +68,7 @@
                 <p>Large</p>
                 <h6>$14.99</h6>
                 <form action="/checkout" method="POST">
-                    <a href="" class="btn btn-primary">Add to Order</a>
+                    <a href="/order" class="btn btn-primary">Add to Order</a>
                 </form>
                 
             </div>
