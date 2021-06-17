@@ -37,7 +37,32 @@
     <!--Order List-->
     <div class="order-list">
         <h3>Your Order</h3>
-
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Toppings:</th>
+                    <th scope="col">Quantity:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Supreme</td>
+                    <td>{{ supreme }}</td>
+                </tr>
+                <tr>
+                    <td>Pepperoni</td>
+                    <td>{{pepperoni}}</td>
+                </tr>
+                <tr>
+                    <td>Sausage</td>
+                    <td>{{sausage}}</td>
+                </tr>
+                <tr>
+                    <td>Hawaiian</td>
+                    <td>{{hawaiian}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="buttons">
@@ -54,9 +79,6 @@
             <a href="/order" class="btn btn-primary">Add More</a>
         </div>
     </div>
-
-    <!--Price of Each Pizza-->
-
 
 
     <!--Total of Entire Order-->
